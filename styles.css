@@ -11,8 +11,7 @@ header {
     background-color: #333;
     color: hwb(0 4% 13%);
     padding: 1rem;
-    text-align: center;
-  
+    text-align: center;  
    
 }
 
@@ -584,5 +583,14 @@ button[type="submit"]:hover {
 } 
 
 
-
+#virtual-tour {
+    margin: 20px;
+    text-align: center;
+  }
+  
+  #tour-container iframe {
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+  }
 
