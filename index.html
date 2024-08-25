@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peak Performance Fitness Gym</title>
+    <link rel="stylesheet" href="styles.css">
+
+
+  <!-- Include the core PDF.js library for rendering PDF documents in the browser -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.15.349/pdf.min.js"></script>
+
+<!-- Include the PDF.js viewer script, which provides additional features like a built-in viewer interface -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.15.349/pdf_viewer.min.js"></script>
+
+<!-- Include the PDF.js viewer CSS to style the PDF viewer interface, ensuring proper layout and appearance -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.15.349/pdf_viewer.min.css">
+
+<!-- Include the Hammer.js library, used for handling touch gestures like swipe, pinch, etc., in web applications -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+
+<!-- Include Font Awesome CSS, which provides access to a wide range of scalable vector icons for use in the web application -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+
+</head>
+<body>
+<main>
+<header>
+    <div class="logo"><u>Peak Performance Fitness Gym</u></div>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Trainers</a></li>
+            <li><a href="#">Memberships</a></li>
+            <li><a href="#" id="scroll-to-footer">Contact Us</a></li>
+            <li><a href="#" id="loginBtn">Login</a></li>
+            <li><a href="#" id="signupBtn">Signup</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Login Modal -->
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="loginClose">&times;</span>
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="loginEmail">Email:</label>
+            <input type="email" id="loginEmail" name="email" required>
+            <label for="loginPassword">Password:</label>
+            <input type="password" id="loginPassword" name="password" required>
+            <button type="submit">Login</button>
+            <p>Or sign in with:</p>
+            <button type="button" class="social-btn" id="loginGoogle">Login with Google</button>
+            <button type="button" class="social-btn" id="loginFacebook">Login with Facebook</button>
+        </form>
+    </div>
+</div>
+
+<!-- <-- Signup Modal -->
+<div id="signupModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="signupClose">&times;</span>
+        <h2>Signup</h2>
+        <form id="signupForm" >
+            <label for="signupName">Name:</label>
+            <input type="text" id="signupName" name="name" required>
+            <label for="signupEmail">Email:</label>
+            <input type="email" id="signupEmail" name="email" required>
+            <label for="signupPassword">Password:</label>
+            <input type="password" id="signupPassword" name="password" required>
+            <button type="submit">Signup</button>
+            <p>Or sign up with:</p>
+            <button type="button" class="social-btn" id="signupGoogle">Signup with Google</button>
+            <button type="button" class="social-btn" id="signupFacebook">Signup with Facebook</button>
+        </form>
+    </div>
+</div>
+
+
+<section class="gym">
+    <h1><i>Transform Your Fitness Journey with Us</i></h1>
+    <p>Join the Best Gym in Indore and Achieve Your Goals!</p>
+    <a href="#" class="cta-button">Join Now</a>
+</section>
+
+<section class="container">
+    <h2>Our Story</h2>
+    <p>Welcome to peak performance fitness gum, where our mission is to help you reach your fitness goals with personalized training and a supportive community.</p>
+
+    <h2>Meet Our Trainers</h2>
+    <p> Meet Monu, our expert Training
+     Specialist dedicated to helping 
+      you achieve peak physical performance.
+       With a wealth of experience and a passion for 
+      fitness, Monu will guide you through personalized 
+       training programs designed to elevate your strength, endurance, 
+       and overall well-being. Whether you're looking to reach new 
+      fitness goals, enhance your athletic abilities, or simply improve your
+     health, Monu is here to support and inspire you every step of the way. 
+     Get ready to unlock your full potential and take your performance to new heights
+      with Monu’s expert guidance!
+        
+        </p>
+    <div class="trainers">
+        <div class="trainer1">
+            <img src="photo6.jpeg" alt="trainer">
+            <p> our expert  instructor, is here to guide you through your wellness journey.</p>
+        </div>
+        
+        <div class="trainer">
+            <img src="photo5.jpeg" alt="Trainer">
+            <p>our Training specialist, will help you to achieve peak physical performance.</p>
+        </div>
+        <div class="trainer">
+            <img src="photo.jpeg" alt="Trainer">
+            <p>Elevate your fitness journey and unlock your true potential with Monu’s expert guidance!</p>
+        </div>
+    </div>
+
+    <h2>gym Schedule</h2>
+
+
+<div class="media-wrapper">
+    <iframe class="video" width="560" height="315"
+        src="https://www.youtube.com/embed/tkqdqE2I3fs"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+    </iframe>
+    <iframe class="pdf" src="Gym%20Schedule.pdf"></iframe>
+
+</div>
+
+
+
+    <div class="gym-schedule">
+        <button onclick="showDetails('Monday')">Monday</button>
+        <button onclick="showDetails('Tuesday')">Tuesday</button>
+        <button onclick="showDetails('Wednesday')">Wednesday </button>
+        <button onclick="showDetails('Thursday')">Thursday </button>
+        <button onclick="showDetails('Friday')">Friday </button>
+        <button onclick="showDetails('Saturday')">Saturday </button>
+        <button onclick="showDetails('Sunday')">Sunday </button>
+
+        <div id="Monday" class="gym-details">
+            <h3>Chest:Exercise</h3>
+            <p>1.barbell flat bench press</p>
+
+        </div>
+        <div id="Tuesday" class="gym-details">
+            <h3>Back:Exercise</h3>
+            <p>T </p>
+        </div>
+        <div id="Wednesday" class="gym-details">
+            <h3>Biceps:Exercise</h3>
+            <p>1.</p>
+        </div>
+        <div id="Thursday" class="gym-details">
+            <h3>Triceps and Abs:Exercise</h3>
+            <p>1.</p>
+        </div>
+        <div id="Friday" class="gym-details">
+            <h3>Solders and Trapes</h3>
+            <p>1.barbell flat bench press</p>
+        </div>
+        <div id="Saturday" class="gym-details">
+            <h3>Chest:Exercise</h3>
+            <p>1.barbell flat bench press</p>
+        </div>
+        <div id="Sunday" class="gym-details">
+            <h3>BREAK:</h3>
+            <p>you need to rest</p>
+        </div>
+    </div>
+
+    <h2>Membership Plans:</h2>
+    <p>Explore our membership options and choose the plan that fits you best.</p>
+    <h1>Gym Membership Plans & Special Offers</h1>
+    <h2>Special Offer for New Female Members:</h2>
+    <p><strong>Empower Her Package</strong></p>
+    <p><strong>Discounted First Month:</strong> ₹699/month (available with any membership plan)</p>
+    <p><strong>Bonus:</strong> Free one-on-one personal training session with one of our top female trainers.</p>
+    <p><strong>Exclusive Access: Join our “Women’s Wellness Workshops” at no additional cost during your first three months.</strong></p>
+    <h3>Special Student Offer:</h3>
+    <ul>
+        <li><strong>Discounted First Month</strong>: ₹699 (with valid student ID)</li>
+        <li><strong>Bonus</strong>: Free group fitness class pass for the first month.</li>
+        <li><strong>Exclusive Access</strong>: Attend our “Student Wellness Workshops” for free during your first three months.</li>
+    </ul>
+    <h2>1. Basic Membership</h2>
+    <p><strong>Monthly Fee:</strong> ₹999/month</p>
+    <p><strong>Includes:</strong> Access to all gym equipment, group fitness classes, and locker room facilities.</p>
+
+    <h2>2. Premium Membership</h2>
+    <p><strong>Monthly Fee:</strong> ₹1199/month</p>
+    <p><strong>Includes:</strong> All Basic Membership features plus unlimited access to specialty classes (yoga, Pilates, spinning) and priority booking for personal training sessions.</p>
+
+    <h2>3. Elite Membership</h2>
+    <p><strong>Monthly Fee:</strong> ₹1399/month</p>
+    <p><strong>Includes:</strong> All Premium Membership features plus personalized workout plans, monthly fitness assessments, and free guest passes.</p>
+
+    <h2>Additional Benefits:</h2>
+    <p><strong>Refer a Friend:</strong> Get one month free for every friend who signs up.</p>
+    <p><strong>Free Health Assessment:</strong> Receive a comprehensive fitness and nutrition assessment when you join.</p>
+
+
+    <section class="image-slider">
+        <h2>Trainer Highlights</h2>
+        <div class="slider-container">
+            <div class="slide">
+                <img src="photo4.jpeg" alt="Trainer 1">
+                <p>Trainer 1 - Expert in Strength Training</p>
+            </div>
+            <div class="slide">
+                <img src="photo3.jpeg" alt="Trainer 2">
+                <p>Trainer 2 - Specialist in Yoga and Flexibility</p>
+            </div>
+            <div class="slide">
+                <img src="photo1crop.jpeg" alt="Trainer 3">
+                <p>Trainer 3 - Pro in Cardio and Endurance</p>
+            </div>
+            <div class="slide">
+                <img src="photo2.jpeg" alt="Trainer 4">
+                <p>Trainer 4 - Pro in Cardio and Endurance</p>
+            </div>
+        </div>
+        <button class="prev">❮</button>
+        <button class="next">❯</button>
+    </section>
+    
+
+    
+
+
+    <section class="testimonials">
+        <h2>What Our Members Say</h2>
+        <div class="testimonial">
+            <p>"The best gym experience I've ever had. The trainers are incredibly supportive and the facilities are top-notch!"</p>
+            <h4>lovepreet</h4>
+        </div>
+        <div class="testimonial">
+            <p>"I love the variety of classes available. It's easy to find something that fits my schedule and goals."</p>
+            <h4>sonali</h4>
+        </div>
+        </section>
+    
+
+
+    <p>Join us today and take the first step toward a stronger, healthier you!</p>
+  
+
+
+    <h2>timing:-></h2>
+    <p>Monday - saturday: </p>
+    <p>Morning: 6 AM - 12 PM </p>
+    <p>Evening:5PM-10PM</p>
+    <p> Sunday: off</p>
+     <p>feel free to ask us if you have any queries or any questions or need further assistance.</p>
+     <p>please don’t hesitate to reach out to us.</p>
+     <p>THANkYOU</p>   
+</section>
+
+
+<h2>Contact Us</h2>
+<form id="contactForm" class="contact-form">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required><br><br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br><br>
+    <label for="message">Message:</label><br>
+    <textarea id="message" name="message" rows="4" required></textarea><br><br>
+    <button type="submit">Send Message</button>
+</form> 
+
+
+
+
+  <footer class="footer">
+    <p>&copy; 2024 Peak Performance Fitness Gym</p>
+    <p>
+        <a href="#" id="privacy-policy-link">Privacy Policy</a> | 
+        <a href="#" id="terms-service-link">Terms of Service</a>
+    </p>
+    <p class="contact-info">Contact Us: (123) 456-7890 | info@peakperformance.com</p>
+    <div class="social-media">
+        <a href="https://facebook.com" class="social-icon" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i> Facebook
+        </a>
+        <a href="https://twitter.com" class="social-icon" aria-label="Twitter">
+            <i class="fab fa-twitter"></i> Twitter
+        </a>
+        <a href="https://instagram.com" class="social-icon" aria-label="Instagram">
+            <i class="fab fa-instagram"></i> Instagram
+        </a>
+    </div>
+</footer> 
+
+
+
+
+
+<button class="scroll-to-top" onclick="scrollToTop()">↑</button>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
